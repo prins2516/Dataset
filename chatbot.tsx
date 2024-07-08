@@ -31,7 +31,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ layerId, setLayerId, sessionId, setSe
 
   const fetchFirstQuestion = async () => {
     try {
-      const response = await fetch("http://18.170.8.204/start_interview", { method: "GET" });
+      const response = await fetch("http://18.170.8.204:5000/start_interview", { method: "GET" });
       const responseData = await response.json();
 
       if (!response.ok) {
@@ -83,7 +83,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ layerId, setLayerId, sessionId, setSe
 
   const fetchNextQuestion = async (questionId: string, answer: string) => {
     try {
-      const response = await fetch("http://18.170.8.204/next_question", {
+      const response = await fetch("http://18.170.8.204:5000/next_question", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -143,7 +143,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ layerId, setLayerId, sessionId, setSe
   };
 
   const handleDownload = () => {
-    const url = `http://18.170.8.204/download/${layerId}/${sessionId}`;
+    const url = `http://18.170.8.204:5000/download/${layerId}/${sessionId}`;
     const link = document.createElement("a");
     link.href = url;
     link.setAttribute("download", `${layerId}_${sessionId}.json`);
