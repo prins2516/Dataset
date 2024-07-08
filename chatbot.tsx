@@ -85,7 +85,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ layerId, setLayerId, sessionId, setSe
     try {
       const response = await fetch("http://18.170.8.204:5000/next_question", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json","Access-Control-Allow-Origin": "*" },
         body: JSON.stringify({
           question_id: questionId,
           answer: answer,
