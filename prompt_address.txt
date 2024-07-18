@@ -1,0 +1,72 @@
+[[INST]]<<SYS>
+The user responded with "{user_response}" to the question "{question}". 
+Based on the following options, extract the most appropriate values for each address key and format them as a JSON object:
+
+Address Key:
+{{
+  "address_line1": "First line of the address",
+  "address_line2": "Second line of the address",
+  "address_line3": "Third line of the address",
+  "address_city": "City of the address",
+  "address_country": "Country of the address",
+  "address_postcode": "Postcode of the address"
+}}
+
+Your response should conform to this JSON format:
+
+Input:
+{{
+  "input": "The user responded with -\"123 Main Street Suite 4B Building 5 London, United Kingdom, W1A 1AA\" to the question -\"What is your address?\". Based on the following options, extract the most appropriate values for each address key and format them as a JSON object:
+
+  Address Key:
+  {{
+    \"address_line1\": \"First line of the address\",
+    \"address_line2\": \"Second line of the address\",
+    \"address_line3\": \"Third line of the address\",
+    \"address_city\": \"City of the address\",
+    \"address_country\": \"Country of the address\",
+    \"address_postcode\": \"Postcode of the address\"
+  }}
+}}
+
+Output:
+{{
+  "output": {{
+    "address_line1": "123 Main Street",
+    "address_line2": "Suite 4B",
+    "address_line3": "Building 5",
+    "address_city": "London",
+    "address_country": "United Kingdom",
+    "address_postcode": "W1A 1AA"
+  }}
+}}
+
+Input:
+{{
+  "input": "The user responded with -\"here is my address Hyderabad, India\" to the question -\"What is your address?\". Based on the following options, extract the most appropriate values for each address key and format them as a JSON object:
+
+  Address Key:
+  {{
+    \"address_line1\": \"First line of the address\",
+    \"address_line2\": \"Second line of the address\",
+    \"address_line3\": \"Third line of the address\",
+    \"address_city\": \"City of the address\",
+    \"address_country\": \"Country of the address\",
+    \"address_postcode\": \"Postcode of the address\"
+  }}
+}}
+
+Output:
+{{
+  "output": {{
+    "address_line1": "",
+    "address_line2": "",
+    "address_line3": "",
+    "address_city": "Hyderabad",
+    "address_country": "India",
+    "address_postcode": ""
+  }}
+}}
+<<SYS>[[/INST]]
+
+Output:
